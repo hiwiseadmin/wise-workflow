@@ -1,15 +1,24 @@
 {
     "name": "wiseadmin/wise-workflow",
-    "description": "WiseAdmin Workflow Engine - 工作流引擎 v2.0",
-    "version": "2.0.0",
+    "description": "WiseAdmin 工作流引擎 — 支持流程定义、多实例流转、条件分支、超时处理与事件通知，内置状态机驱动",
+    "homepage": "https://github.com/hiwiseadmin/wise-workflow",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "WiseAdmin",
+            "name": "WiseAdmin Team",
             "email": "wiseadmin@126.com"
         }
     ],
+    "require": {
+        "php": ">=8.1",
+        "topthink/framework": "^6.0 || ^8.0",
+        "topthink/think-orm": "^2.0 || ^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=9.0",
+        "mockery/mockery": ">=1.0"
+    },
     "autoload": {
         "psr-4": {
             "wise\\workflow\\": "src/"
@@ -20,15 +29,6 @@
         "psr-4": {
             "wise\\workflow\\test\\": "tests/"
         }
-    },
-    "require": {
-        "php": ">=8.1",
-        "topthink/framework": "^6.0 || ^8.0",
-        "topthink/think-orm": "^2.0 || ^3.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": ">=9.0",
-        "mockery/mockery": ">=1.0"
     },
     "config": {
         "optimize-autoloader": true,
@@ -45,5 +45,18 @@
             },
             "migrate-path": "database/migrations"
         }
+    },
+    "archive": {
+        "exclude": [
+            "/tests",
+            "/docs",
+            "/.github",
+            "/phpunit.xml",
+            "/.gitattributes",
+            "/.gitignore",
+            "/*.md",
+            "!/README.md",
+            "/qa/"
+        ]
     }
 }
